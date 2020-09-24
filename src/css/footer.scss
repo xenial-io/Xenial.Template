@@ -1,0 +1,46 @@
+@import "./_colors.scss";
+
+.xenial-footer {
+  &__social {
+    background-color: var(--xenial-primary-color);
+    color: var(--xenial-lighter-color);
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    h3 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 3rem;
+      display: flex;
+      justify-content: center;
+
+      li {
+        display: block;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    a,
+    a:link {
+      color: var(--xenial-lighter-color);
+      transition: color ease-in-out 150ms;
+      &:hover {
+        color: var(--xenial-secondary-color);
+      }
+    }
+  }
+
+  &__copyright {
+    text-align: center;
+  }
+}
