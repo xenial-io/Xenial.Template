@@ -1,18 +1,7 @@
-@import "./variables";
+@import "./_variables.scss";
+@import "./_colors.scss";
 @import "./catamaran.css";
 @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-
-:root {
-  --xenial-primary-color: #00506a;
-  --xenial-secondary-color: #38bcd8;
-  --xenial-highlight-color: #f3a027;
-  --xenial-lighter-color: #e4e4e4;
-  --xenial-light-color: #99aebb;
-  --xenial-dark-color: #667a86;
-  --xenial-darker-color: #333333;
-  --xenial-white-color: #fff;
-  --xenial-black-color: #000;
-}
 
 *,
 html,
@@ -80,7 +69,8 @@ main {
     left: 0;
     right: 0;
     transform: scale(1, 0);
-    transition: transform 250ms ease-in-out;
+    transition: 500ms ease;
+    transition-timing-function: cubic-bezier(0.75, 0, 0.29, 1.01);
     transform-origin: top;
 
     a,
@@ -109,7 +99,9 @@ main {
     align-items: center;
 
     div {
-      background-color: rgba(#667a86, 0.85);
+      background-color: rgba($xenial-dark-color, 0.85);
+      transition: background-color 250ms ease-in-out;
+
       margin-left: calc(var(--left-margin) / 2);
       padding-left: calc(var(--left-margin) / 2);
       margin-right: calc(var(--left-margin) / 2);

@@ -1,0 +1,21 @@
+$xenial-primary-color: #00506a;
+$xenial-secondary-color: #38bcd8;
+$xenial-highlight-color: #f3a027;
+$xenial-lighter-color: #e4e4e4;
+$xenial-light-color: #99aebb;
+$xenial-dark-color: #667a86;
+$xenial-darker-color: #333333;
+$xenial-white-color: #fff;
+$xenial-black-color: #000;
+
+:root {
+  --xenial-primary-color: #{$xenial-primary-color};
+  --xenial-secondary-color: #{$xenial-secondary-color};
+  --xenial-highlight-color: #{$xenial-highlight-color};
+  --xenial-lighter-color: #{$xenial-lighter-color};
+  --xenial-light-color: #{$xenial-light-color};
+  --xenial-dark-color: #{$xenial-dark-color};
+  --xenial-darker-color: #{$xenial-darker-color};
+  --xenial-white-color: #{$xenial-white-color};
+  --xenial-black-color: #{$xenial-black-color};
+}
