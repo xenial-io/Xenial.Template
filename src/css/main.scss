@@ -34,6 +34,43 @@ main {
   height: var(--height);
   position: relative;
 
+  &__logo__teaser {
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+    flex-direction: row-reverse;
+    padding-right: var(--left-margin);
+    padding-left: var(--left-margin);
+    padding-bottom: 0.1rem;
+    color: var(--xenial-lighter-color);
+    background-color: rgba($xenial-dark-color, 0.85);
+    opacity: 0;
+    transition: background-color 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
+    border: 0;
+
+    img {
+      display: block;
+      width: calc(var(--height) - 0.3rem);
+      padding: 0;
+      margin: 0;
+      margin-top: 0.3rem;
+    }
+
+    &__brand-rows {
+      display: flex;
+      flex-direction: column;
+      font-weight: normal;
+      text-align: center;
+      margin-right: 0.4rem;
+      line-height: 1.1rem;
+      align-items: flex-end;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
   &__logo {
     display: flex;
     flex-direction: row-reverse;
@@ -148,6 +185,11 @@ main {
       opacity: 1;
       transition: opacity 250ms ease-in-out 100ms;
     }
+  }
+
+  &__togglenavbar-checkbox:checked ~ &__logo__teaser {
+    opacity: 1;
+    background-color: var(--xenial-dark-color);
   }
 
   &__togglenavbar-checkbox:checked ~ &__togglenavbar-label div {
