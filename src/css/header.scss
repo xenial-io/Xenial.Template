@@ -100,6 +100,7 @@
       opacity: 0;
       transition: opacity 100ms ease-in-out;
       position: relative;
+      white-space: nowrap;
 
       i.fas {
         width: 1.2em;
