@@ -118,28 +118,29 @@ main {
       height: calc(var(--height) - var(--left-margin) / 2);
       display: flex;
       align-items: center;
-    }
 
-    span,
-    span::before,
-    span::after {
-      display: flex;
-      background-color: var(--xenial-lighter-color);
-      width: 1.5rem;
-      height: 2px;
-      border-radius: 2px;
-      position: relative;
-    }
-    span::before,
-    span::after {
-      content: "";
-      position: absolute;
-    }
-    span::before {
-      bottom: 7px;
-    }
-    span::after {
-      top: 7px;
+      span.middle,
+      span.before,
+      span.after {
+        display: flex;
+        background-color: var(--xenial-lighter-color);
+        width: 1.5rem;
+        height: 2px;
+        border-radius: 2px;
+        position: relative;
+        transition: 0.6s ease;
+        transition-timing-function: cubic-bezier(0.75, 0, 0.29, 1.01);
+      }
+      span.before,
+      span.after {
+        position: absolute;
+      }
+      span.before {
+        bottom: 7px;
+      }
+      span.after {
+        top: 7px;
+      }
     }
   }
 
@@ -161,5 +162,19 @@ main {
     background-color: var(--xenial-dark-color);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  &__togglenavbar-checkbox:checked ~ &__togglenavbar-label div span.before {
+    transform: rotate(45deg);
+    transform: scale(0, 0);
+  }
+
+  &__togglenavbar-checkbox:checked ~ &__togglenavbar-label div span.middle {
+    transform: rotate(45deg);
+  }
+
+  &__togglenavbar-checkbox:checked ~ &__togglenavbar-label div span.after {
+    top: 0px;
+    transform: rotate(-270deg);
   }
 }
