@@ -68,6 +68,7 @@ main {
       align-items: flex-end;
       margin-top: auto;
       margin-bottom: auto;
+      white-space: nowrap;
     }
   }
 
@@ -97,6 +98,7 @@ main {
       align-items: flex-end;
       margin-top: auto;
       margin-bottom: auto;
+      white-space: nowrap;
     }
   }
 
@@ -110,19 +112,46 @@ main {
     transition-timing-function: cubic-bezier(0.75, 0, 0.29, 1.01);
     transform-origin: top;
 
+    ul {
+      list-style: none;
+    }
+
     a,
     a:link {
       margin-bottom: 0.5rem;
       text-decoration: none;
       color: var(--xenial-lighter-color);
       font-size: 1.4rem;
-      display: block;
+      display: inline-block;
       margin-left: var(--left-margin);
       opacity: 0;
       transition: opacity 100ms ease-in-out;
+      position: relative;
 
       i.fas {
         width: 1.2em;
+      }
+
+      &:hover i.fas {
+        color: var(--xenial-secondary-color);
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        height: 2px;
+        background: var(--xenial-secondary-color);
+        left: -0.2rem;
+        right: -0.2rem;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 150ms;
+        transform-origin: left;
+        border-radius: 2px;
+      }
+
+      &:hover::after {
+        transform: scale(1, 1);
       }
     }
   }
@@ -211,4 +240,64 @@ main {
     top: 0px;
     transform: rotate(-270deg);
   }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .xenial-header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(500px, 3fr) 1fr;
+
+    &__logo__teaser,
+    &__togglenavbar-label {
+      display: none;
+    }
+
+    &__logo {
+      flex-direction: row;
+      grid-column: 2 / 3;
+
+      &__brand-rows {
+        align-items: flex-start;
+        margin-left: 0.4rem;
+      }
+    }
+
+    &__nav {
+      grid-column: 3 / 4;
+      position: unset;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      transform: unset;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+      }
+
+      a,
+      a:link {
+        margin-bottom: 0;
+        margin-left: 1.5em;
+        font-size: unset;
+        display: unset;
+        opacity: unset;
+        position: relative;
+      }
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
 }
