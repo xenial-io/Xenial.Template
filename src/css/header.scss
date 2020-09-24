@@ -1,8 +1,26 @@
 @import "./_colors.scss";
 
 .xenial-header {
-  --left-margin: 1.1rem;
   --height: 3rem;
+  --offset: 0.3rem;
+}
+
+@media (min-width: 768px) {
+  .xenial-header {
+    --height: 4rem;
+    --offset: 1rem;
+    &__logo__teaser,
+    &__logo {
+      img {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+  }
+}
+
+.xenial-header {
+  --left-margin: 1.1rem;
 
   height: var(--height);
   position: relative;
@@ -25,10 +43,10 @@
 
     img {
       display: block;
-      width: calc(var(--height) - 0.3rem);
+      width: calc(var(--height) - var(--offset));
       padding: 0;
       margin: 0;
-      margin-top: 0.3rem;
+      margin-top: var(--offset);
     }
 
     &__brand-rows {
@@ -55,10 +73,10 @@
 
     img {
       display: block;
-      width: calc(var(--height) - 0.3rem);
+      width: calc(var(--height) - var(--offset));
       padding: 0;
       margin: 0;
-      margin-top: 0.3rem;
+      margin-top: var(--offset);
     }
 
     &__brand-rows {
@@ -227,8 +245,17 @@
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .xenial-header {
+    --height: 4rem;
     display: grid;
     grid-template-columns: 1fr auto minmax(500px, 3fr) 1fr;
+
+    &__logo__teaser,
+    &__logo {
+      img {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
 
     &__logo__teaser,
     &__togglenavbar-label {
