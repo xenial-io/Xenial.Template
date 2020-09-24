@@ -106,6 +106,10 @@
         width: 1.2em;
       }
 
+      i.fas {
+        transition: color 200ms ease-in-out;
+      }
+
       &:hover i.fas {
         color: var(--xenial-secondary-color);
       }
