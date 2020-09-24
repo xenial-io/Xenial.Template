@@ -1,4 +1,6 @@
+@import "./variables";
 @import "./catamaran.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
 :root {
   --xenial-primary-color: #00506a;
@@ -27,9 +29,12 @@ body {
 }
 
 .xenial-header {
+  --left-margin: 1.1rem;
   &__logo {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
+    margin-left: var(--left-margin);
+    margin-right: var(--left-margin);
     background-color: var(--xenial-dark-color);
     color: var(--xenial-lighter-color);
 
@@ -44,11 +49,25 @@ body {
       flex-direction: column;
       font-weight: normal;
       text-align: center;
-      margin-left: 0.4rem;
+      margin-right: 0.4rem;
       line-height: 1.1rem;
-      align-items: flex-start;
+      align-items: flex-end;
       margin-top: auto;
       margin-bottom: auto;
+    }
+  }
+
+  &__nav {
+    a,
+    a:link {
+      text-decoration: none;
+      color: var(--xenial-lighter-color);
+      font-size: 1.4rem;
+      display: block;
+      margin-left: var(--left-margin);
+      i.fas {
+        width: 1.2em;
+      }
     }
   }
 }
