@@ -36,7 +36,9 @@ $xenial-anim-l: 500ms;
   --xenial-fineprint-bg-color: #{$xenial-secondary-color};
   --xenial-fineprint-fg-color: #{$xenial-lighter-color};
   --xenial-fineprint-highlight-color: #{$xenial-secondary-color};
+}
 
+:root {
   --xenial-anim-s: #{$xenial-anim-s};
   --xenial-anim-s2: #{$xenial-anim-s2};
   --xenial-anim-s3: #{$xenial-anim-s3};
