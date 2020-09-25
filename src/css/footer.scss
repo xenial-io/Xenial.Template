@@ -2,8 +2,8 @@
 
 .xenial-footer {
   &__social {
-    background-color: var(--xenial-primary-color);
-    color: var(--xenial-lighter-color);
+    background-color: var(--xenial-teaser-bg-color);
+    color: var(--xenial-teaser-fg-color);
     text-align: center;
     padding-top: 4rem;
     padding-bottom: 4rem;
@@ -40,24 +40,24 @@
 
     a,
     a:link {
-      color: var(--xenial-lighter-color);
+      color: var(--xenial-teaser-fg-color);
       transition: color ease-in-out 150ms;
       &:hover {
-        color: var(--xenial-secondary-color);
+        color: var(--xenial-teaser-highlight-color);
       }
     }
   }
 
   &__fineprint {
     text-align: center;
-    color: var(--xenial-lighter-color);
+    color: var(--xenial-fineprint-fg-color);
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 0.8em;
 
     a,
     a:link {
-      color: var(--xenial-lighter-color);
+      color: var(--xenial-fineprint-fg-color);
       text-decoration: none;
       font-weight: bold;
       position: relative;
@@ -67,7 +67,7 @@
         position: absolute;
         display: block;
         height: 1px;
-        background: var(--xenial-secondary-color);
+        background: var(--xenial-fineprint-highlight-color);
         left: 0;
         right: 0;
         bottom: 1px;

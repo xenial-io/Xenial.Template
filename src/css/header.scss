@@ -35,9 +35,9 @@
     padding-left: var(--left-margin);
     padding-bottom: 0.1rem;
     color: var(--xenial-lighter-color);
-    background-color: rgba($xenial-dark-color, 0.85);
+    background-color: var(--xenial-hamburer-bg-color);
     opacity: 0;
-    transition: background-color 250ms ease-in-out;
+    transition: background-color --var(--xenial-anim-m) ease-in-out;
     transition: opacity 250ms ease-in-out;
     border: 0;
 
@@ -68,7 +68,7 @@
     flex-direction: row-reverse;
     margin-left: var(--left-margin);
     margin-right: var(--left-margin);
-    background-color: var(--xenial-dark-color);
+    background-color: var(--xenial-hamburer-bg-color);
     color: var(--xenial-lighter-color);
 
     img {
@@ -95,7 +95,7 @@
 
   &__nav {
     position: fixed;
-    background-color: var(--xenial-dark-color);
+    background-color: var(--xenial-nav-bg-color);
     left: 0;
     right: 0;
     transform: scale(1, 0);
@@ -108,7 +108,8 @@
     }
 
     a,
-    a:link {
+    a:link,
+    label {
       margin-bottom: 0.5rem;
       text-decoration: none;
       color: var(--xenial-lighter-color);
@@ -161,7 +162,7 @@
     align-items: center;
 
     div {
-      background-color: rgba($xenial-dark-color, 0.85);
+      background-color: var(--xenial-hamburer-bg-color);
       transition: background-color 250ms ease-in-out;
 
       margin-left: calc(var(--left-margin) / 2);
@@ -206,7 +207,8 @@
     transform: scale(1, 1);
 
     a,
-    a:link {
+    a:link,
+    label {
       opacity: 1;
       transition: opacity 250ms ease-in-out 100ms;
     }
@@ -287,7 +289,8 @@
       }
 
       a,
-      a:link {
+      a:link,
+      label {
         margin-bottom: 0;
         margin-left: 1.5em;
         font-size: unset;

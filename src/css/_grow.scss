@@ -1,0 +1,27 @@
+/*
+1. Allows the body’s children
+   to grow to 100%
+   of the viewport’s height.
+*/
+html,
+body {
+  height: 100%; /* 1. */
+}
+
+/*
+1. Allows the content area
+   to grow to the viewport height.
+*/
+body {
+  display: flex; /* 1. */
+  flex-direction: column; /* 1. */
+}
+
+/*
+1. Grows the content area
+   to take up all the remaining height
+   inside the body element.
+*/
+.xenial-body {
+  flex-grow: 1; /* 1. */
+}
