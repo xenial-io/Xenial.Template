@@ -11,15 +11,17 @@ img {
   border: 0;
 }
 
-.xenial-body {
-  background-color: var(--xenial-body-bg-color);
+@mixin default-transition {
   transition-property: color, opacity, background-color;
   transition-duration: var(--xenial-anim-s3);
   transition-timing-function: ease-in;
+}
+
+.xenial-body {
+  background-color: var(--xenial-body-bg-color);
+  @include default-transition;
   * {
-    transition-property: color, opacity, background-color;
-    transition-duration: var(--xenial-anim-s3);
-    transition-timing-function: ease-in;
+    @include default-transition;
   }
 }
 

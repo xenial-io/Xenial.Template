@@ -1,30 +1,61 @@
 @import "./_colors.scss";
 
+@mixin light-theme {
+  --xenial-lighter-color: #{$xenial-darker-color};
+  --xenial-light-color: #{$xenial-dark-color};
+  --xenial-dark-color: #{$xenial-light-color};
+  --xenial-darker-color: #{$xenial-lighter-color};
+  --xenial-white-color: #{$xenial-black-color};
+  --xenial-black-color: #{$xenial-white-color};
+  --xenial-primary-color: #{$xenial-secondary-color};
+  --xenial-secondary-color: #{$xenial-primary-color};
+
+  --xenial-body-bg-color: #{$xenial-light-color};
+  --xenial-nav-bg-color: #{$xenial-light-color};
+  --xenial-hamburer-bg-color: #{rgba($xenial-light-color, 0.85)};
+
+  --xenial-teaser-bg-color: #{$xenial-secondary-color};
+  --xenial-teaser-fg-color: #{$xenial-darker-color};
+  --xenial-teaser-highlight-color: #{$xenial-highlight-color};
+
+  --xenial-fineprint-bg-color: #{$xenial-secondary-color};
+  --xenial-fineprint-fg-color: #{$xenial-lighter-color};
+  --xenial-fineprint-highlight-color: #{$xenial-primary-color};
+}
+
+:root {
+  //Get a baseline for the animation
+  @include dark-theme;
+}
+
+@media (prefers-color-scheme: light) {
+  .xenial {
+    &__toggletheme-checkbox {
+      &:checked ~ * {
+        @include dark-theme;
+      }
+      &:not(:checked) ~ * {
+        @include light-theme;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .xenial {
+    &__toggletheme-checkbox {
+      &:checked ~ * {
+        @include light-theme;
+      }
+      &:not(:checked) ~ * {
+        @include dark-theme;
+      }
+    }
+  }
+}
+
 .xenial {
   &__toggletheme-checkbox {
     display: none;
-
-    &:checked ~ * {
-      --xenial-lighter-color: #{$xenial-darker-color};
-      --xenial-light-color: #{$xenial-dark-color};
-      --xenial-dark-color: #{$xenial-light-color};
-      --xenial-darker-color: #{$xenial-lighter-color};
-      --xenial-white-color: #{$xenial-black-color};
-      --xenial-black-color: #{$xenial-white-color};
-      --xenial-primary-color: #{$xenial-secondary-color};
-      --xenial-secondary-color: #{$xenial-primary-color};
-
-      --xenial-body-bg-color: #{$xenial-light-color};
-      --xenial-nav-bg-color: #{$xenial-light-color};
-      --xenial-hamburer-bg-color: #{rgba($xenial-light-color, 0.85)};
-
-      --xenial-teaser-bg-color: #{$xenial-secondary-color};
-      --xenial-teaser-fg-color: #{$xenial-darker-color};
-      --xenial-teaser-highlight-color: #{$xenial-highlight-color};
-
-      --xenial-fineprint-bg-color: #{$xenial-secondary-color};
-      --xenial-fineprint-fg-color: #{$xenial-lighter-color};
-      --xenial-fineprint-highlight-color: #{$xenial-primary-color};
-    }
   }
 }

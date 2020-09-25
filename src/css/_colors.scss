@@ -14,7 +14,7 @@ $xenial-anim-s3: 200ms;
 $xenial-anim-m: 250ms;
 $xenial-anim-l: 500ms;
 
-:root {
+@mixin dark-theme {
   --xenial-primary-color: #{$xenial-primary-color};
   --xenial-secondary-color: #{$xenial-secondary-color};
   --xenial-highlight-color: #{$xenial-highlight-color};
@@ -42,4 +42,14 @@ $xenial-anim-l: 500ms;
   --xenial-anim-s3: #{$xenial-anim-s3};
   --xenial-anim-m: #{$xenial-anim-m};
   --xenial-anim-l: #{$xenial-anim-l};
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --xenial-anim-s: 0;
+    --xenial-anim-s2: 0;
+    --xenial-anim-s3: 0;
+    --xenial-anim-m: 0;
+    --xenial-anim-l: 0;
+  }
 }
