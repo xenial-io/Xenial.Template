@@ -7,8 +7,17 @@ body {
   padding: 0;
   font-family: "Catamaran", sans-serif;
 }
+
 img {
   border: 0;
+}
+
+pre code {
+  $code-font: Consolas, monaco, monospace;
+  font-family: $code-font;
+  * {
+    font-family: $code-font;
+  }
 }
 
 @mixin default-transition {
