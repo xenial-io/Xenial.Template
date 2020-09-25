@@ -1,3 +1,5 @@
+@import "./highlight.dark.scss";
+
 $xenial-primary-color: #00506a;
 $xenial-secondary-color: #38bcd8;
 $xenial-highlight-color: #f3a027;
@@ -36,6 +38,8 @@ $xenial-anim-l: 500ms;
   --xenial-fineprint-bg-color: #{$xenial-secondary-color};
   --xenial-fineprint-fg-color: #{$xenial-lighter-color};
   --xenial-fineprint-highlight-color: #{$xenial-secondary-color};
+
+  @include highlight-dark;
 }
 
 :root {

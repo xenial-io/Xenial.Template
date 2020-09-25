@@ -1,0 +1,25 @@
+/* a11y-light theme */
+/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
+/* @author: ericwbailey */
+
+@mixin highlight-lite {
+  $highlight-quote: #696969;
+  $highlight-variable: #d91e18;
+  $highlight-type: #aa5d00;
+  $highlight-attribute: #aa5d00;
+  $highlight-symbol: #008000;
+  $highlight-selection: #007faa;
+  $highlight-keyword: #7928a1;
+  $highlight-bg: #fefefe;
+  $highlight-fg: #545454;
+
+  --highlight-quote: #{$highlight-quote};
+  --highlight-variable: #{$highlight-variable};
+  --highlight-type: #{$highlight-type};
+  --highlight-attribute: #{$highlight-attribute};
+  --highlight-symbol: #{$highlight-symbol};
+  --highlight-selection: #{$highlight-selection};
+  --highlight-keyword: #{$highlight-keyword};
+  --highlight-bg: #{$highlight-bg};
+  --highlight-fg: #{$highlight-fg};
+}

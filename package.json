@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
+    "@highlightjs/highlight.js": "^10.0.0-beta.0",
     "open-cli": "^6.0.1",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.11",
