@@ -1,25 +1,63 @@
-/* a11y-light theme */
-/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
-/* @author: ericwbailey */
-
 @mixin highlight-lite {
-  $highlight-quote: #696969;
-  $highlight-variable: #d91e18;
-  $highlight-type: #aa5d00;
-  $highlight-attribute: #aa5d00;
-  $highlight-symbol: #008000;
-  $highlight-selection: #007faa;
-  $highlight-keyword: #7928a1;
-  $highlight-bg: #fefefe;
-  $highlight-fg: #545454;
+  $highlight-fg: #393a34;
+  $highlight-bg: #ffffff;
 
-  --highlight-quote: #{$highlight-quote};
-  --highlight-variable: #{$highlight-variable};
-  --highlight-type: #{$highlight-type};
-  --highlight-attribute: #{$highlight-attribute};
-  --highlight-symbol: #{$highlight-symbol};
-  --highlight-selection: #{$highlight-selection};
-  --highlight-keyword: #{$highlight-keyword};
-  --highlight-bg: #{$highlight-bg};
+  $highlight-selection-bg: #c1def1;
+
+  $highlight-token-comment: #008000;
+  $highlight-token-constant: #36acaa;
+  $highlight-token-string: #a31515;
+  $highlight-token-keyword: #0000ff;
+  $highlight-token-function: #393a34;
+  $highlight-token-variable: #d16969;
+  $highlight-token-parameter: #2b91af;
+  $highlight-token-classname: #2b91af;
+  $highlight-token-interpolation: #2b91af;
+  $highlight-token-boolean: #0000ff;
+  $highlight-token-selector: #800000;
+
   --highlight-fg: #{$highlight-fg};
+  --highlight-bg: #{$highlight-bg};
+
+  --highlight-selection-bg: #{$highlight-selection-bg};
+
+  --highlight-token-comment: #{$highlight-token-comment};
+  --highlight-token-constant: #{$highlight-token-constant};
+  --highlight-token-string: #{$highlight-token-string};
+  --highlight-token-keyword: #{$highlight-token-keyword};
+  --highlight-token-function: #{$highlight-token-function};
+  --highlight-token-variable: #{$highlight-token-variable};
+  --highlight-token-parameter: #{$highlight-token-parameter};
+  --highlight-token-classname: #{$highlight-token-classname};
+  --highlight-token-interpolation: #{$highlight-token-interpolation};
+  --highlight-token-boolean: #{$highlight-token-boolean};
+  --highlight-token-selector: #{$highlight-token-selector};
 }
+
+// /* overrides color-values for the Line Numbers plugin
+//   * http://prismjs.com/plugins/line-numbers/
+//   */
+// .line-numbers .line-numbers-rows {
+//   border-right-color: #a5a5a5;
+// }
+
+// .line-numbers-rows > span:before {
+//   color: #2b91af;
+// }
+
+// /* overrides color-values for the Line Highlight plugin
+//  * http://prismjs.com/plugins/line-highlight/
+//  */
+// .line-highlight {
+//   background: rgba(193, 222, 241, 0.2);
+//   background: -webkit-linear-gradient(
+//     left,
+//     rgba(193, 222, 241, 0.2) 70%,
+//     rgba(221, 222, 241, 0)
+//   );
+//   background: linear-gradient(
+//     to right,
+//     rgba(193, 222, 241, 0.2) 70%,
+//     rgba(221, 222, 241, 0)
+//   );
+// }

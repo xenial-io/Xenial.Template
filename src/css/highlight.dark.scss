@@ -1,25 +1,35 @@
-/* a11y-dark theme */
-/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
-/* @author: ericwbailey */
-
 @mixin highlight-dark {
-  $highlight-quote: #d4d0ab;
-  $highlight-variable: #ffa07a;
-  $highlight-type: #f5ab35;
-  $highlight-attribute: #ffd700;
-  $highlight-symbol: #abe338;
-  $highlight-selection: #00e0e0;
-  $highlight-keyword: #dcc6e0;
-  $highlight-bg: #2b2b2b;
-  $highlight-fg: #f8f8f2;
+  $highlight-fg: #d4d4d4;
+  $highlight-bg: #1e1e1e;
 
-  --highlight-quote: #{$highlight-quote};
-  --highlight-variable: #{$highlight-variable};
-  --highlight-type: #{$highlight-type};
-  --highlight-attribute: #{$highlight-attribute};
-  --highlight-symbol: #{$highlight-symbol};
-  --highlight-selection: #{$highlight-selection};
-  --highlight-keyword: #{$highlight-keyword};
-  --highlight-bg: #{$highlight-bg};
+  $highlight-selection-bg: #b3d4fc;
+
+  $highlight-token-comment: #6a9955;
+  $highlight-token-constant: #b5cea8;
+  $highlight-token-string: #ce9178;
+  $highlight-token-keyword: #c586c0;
+  $highlight-token-function: #dcdcaa;
+  $highlight-token-variable: #d16969;
+  $highlight-token-parameter: #9cdcfe;
+  $highlight-token-classname: #4ec9b0;
+  $highlight-token-interpolation: #569cd6;
+  $highlight-token-boolean: #569cd6;
+  $highlight-token-selector: #d7ba7d;
+
   --highlight-fg: #{$highlight-fg};
+  --highlight-bg: #{$highlight-bg};
+
+  --highlight-selection-bg: #{$highlight-selection-bg};
+
+  --highlight-token-comment: #{$highlight-token-comment};
+  --highlight-token-constant: #{$highlight-token-constant};
+  --highlight-token-string: #{$highlight-token-string};
+  --highlight-token-keyword: #{$highlight-token-keyword};
+  --highlight-token-function: #{$highlight-token-function};
+  --highlight-token-variable: #{$highlight-token-variable};
+  --highlight-token-parameter: #{$highlight-token-parameter};
+  --highlight-token-classname: #{$highlight-token-classname};
+  --highlight-token-interpolation: #{$highlight-token-interpolation};
+  --highlight-token-boolean: #{$highlight-token-boolean};
+  --highlight-token-selector: #{$highlight-token-selector};
 }

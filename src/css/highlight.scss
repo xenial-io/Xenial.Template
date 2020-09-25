@@ -1,99 +1,233 @@
-/* a11y-dark theme */
-/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
-/* @author: ericwbailey */
-
-/* Comment */
-.hljs-comment,
-.hljs-quote {
-  color: var(--highlight-quote);
-}
-
-/* Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: var(--highlight-variable);
-}
-
-/* Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: var(--highlight-type);
-}
-
-/* Yellow */
-.hljs-attribute {
-  color: var(--highlight-attribute);
-}
-
-/* Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: var(--highlight-symbol);
-}
-
-/* Blue */
-.hljs-title,
-.hljs-section {
-  color: var(--highlight-selection);
-}
-
-/* Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-  color: var(--highlight-keyword);
-}
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  background: var(--highlight-bg);
+pre[class*="language-"],
+code[class*="language-"] {
   color: var(--highlight-fg);
-  padding: 0.5em;
+  font-size: 13px;
+  text-shadow: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
-.hljs-emphasis {
-  font-style: italic;
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection {
+  text-shadow: none;
+  background: var(--highlight-selection-bg);
 }
 
-.hljs-strong {
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
+  background: var(--highlight-selection-bg);
+}
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
+  background: var(--highlight-selection-bg);
+}
+
+@media print {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  background: var(--highlight-bg);
+}
+
+//TODO: CHECK IF NEEDED
+// :not(pre) > code[class*="language-"] {
+//   padding: 0.1em 0.3em;
+//   border-radius: 0.3em;
+//   color: #db4c69;
+//   background: #f9f2f4;
+// }
+/*********************************************************
+* Tokens
+*/
+// .namespace {
+//   opacity: 0.7;
+// }
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--highlight-token-comment);
+}
+
+.token.punctuation {
+  color: var(--highlight-fg);
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--highlight-token-constant);
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--highlight-token-string);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--highlight-fg);
+  background: var(--highlight-bg);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: var(--highlight-token-keyword);
+}
+
+.token.function {
+  color: var(--highlight-token-function);
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--highlight-token-variable);
+}
+
+.token.important,
+.token.bold {
   font-weight: bold;
 }
 
-@media screen and (-ms-high-contrast: active) {
-  .hljs-addition,
-  .hljs-attribute,
-  .hljs-built_in,
-  .hljs-builtin-name,
-  .hljs-bullet,
-  .hljs-comment,
-  .hljs-link,
-  .hljs-literal,
-  .hljs-meta,
-  .hljs-number,
-  .hljs-params,
-  .hljs-string,
-  .hljs-symbol,
-  .hljs-type,
-  .hljs-quote {
-    color: highlight;
-  }
-
-  .hljs-keyword,
-  .hljs-selector-tag {
-    font-weight: bold;
-  }
+.token.italic {
+  font-style: italic;
 }
+
+.token.constant {
+  color: var(--highlight-token-parameter);
+}
+
+.token.class-name {
+  color: var(--highlight-token-classname);
+}
+
+.token.parameter {
+  color: var(--highlight-token-parameter);
+}
+
+.token.interpolation {
+  color: var(--highlight-token-parameter);
+}
+
+.token.punctuation.interpolation-punctuation {
+  color: var(--highlight-token-interpolation);
+}
+
+.token.boolean {
+  color: var(--highlight-token-boolean);
+}
+
+.token.property {
+  color: var(--highlight-token-parameter);
+}
+
+.token.selector {
+  color: var(--highlight-token-selector);
+}
+
+.token.tag {
+  color: var(--highlight-token-boolean);
+}
+
+.token.attr-name {
+  color: var(--highlight-token-parameter);
+}
+
+.token.attr-value {
+  color: var(--highlight-token-string);
+}
+
+.token.entity {
+  color: var(--highlight-token-classname);
+  cursor: unset;
+}
+
+.token.namespace {
+  color: var(--highlight-token-classname);
+}
+/*********************************************************
+* Language Specific
+*/
+pre[class*="language-javascript"],
+code[class*="language-javascript"] {
+  color: var(--highlight-token-classname);
+}
+
+pre[class*="language-css"],
+code[class*="language-css"] {
+  color: var(--highlight-token-string);
+}
+
+pre[class*="language-html"],
+code[class*="language-html"] {
+  color: var(--highlight-fg);
+}
+
+//TODO: CHECK IF NEEDED
+// .language-html .token.punctuation {
+//   color: #808080;
+// }
+
+/*********************************************************
+* Line highlighting
+*/
+pre[data-line] {
+  position: relative;
+}
+
+pre[class*="language-"] > code[class*="language-"] {
+  position: relative;
+  z-index: 1;
+}
+
+//TODO: CHECK IF NEEDED
+// .line-highlight {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   padding: inherit 0;
+//   margin-top: 1em;
+//   background: #f7ebc6;
+//   box-shadow: inset 5px 0 0 #f7d87c;
+//   z-index: 0;
+//   pointer-events: none;
+//   line-height: inherit;
+//   white-space: pre;
+// }

@@ -11,12 +11,12 @@
   "license": "ISC",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
-    "@highlightjs/highlight.js": "^10.0.0-beta.0",
+    "css": "^3.0.0",
     "open-cli": "^6.0.1",
     "parcel-bundler": "^1.12.4",
+    "prismjs": "^1.21.0",
     "sass": "^1.26.11",
     "typescript": "^4.0.3",
-    "css": "^3.0.0",
     "webfonts": "^0.1.1"
   }
 }
