@@ -8,7 +8,11 @@ $xenial-darker-color: #333333;
 $xenial-white-color: #fff;
 $xenial-black-color: #000;
 
+$xenial-anim-s: 100ms;
+$xenial-anim-s2: 150ms;
+$xenial-anim-s3: 200ms;
 $xenial-anim-m: 250ms;
+$xenial-anim-l: 500ms;
 
 :root {
   --xenial-primary-color: #{$xenial-primary-color};
@@ -33,5 +37,9 @@ $xenial-anim-m: 250ms;
   --xenial-fineprint-fg-color: #{$xenial-lighter-color};
   --xenial-fineprint-highlight-color: #{$xenial-secondary-color};
 
+  --xenial-anim-s: #{$xenial-anim-s};
+  --xenial-anim-s2: #{$xenial-anim-s2};
+  --xenial-anim-s3: #{$xenial-anim-s3};
   --xenial-anim-m: #{$xenial-anim-m};
+  --xenial-anim-l: #{$xenial-anim-l};
 }
