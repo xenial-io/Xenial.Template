@@ -6,7 +6,8 @@
   "scripts": {
     "start": "open-cli http://localhost:1234 & parcel serve src/index.html",
     "watch": "parcel watch src/index.html",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "serve": "npm run build && dotnet serve -d dist -z -b"
   },
   "author": "Manuel Grundner, Xenial",
   "license": "ISC",
@@ -33,6 +34,5 @@
     "webfonts": "^0.1.1",
     "zlib": "^1.0.5"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
