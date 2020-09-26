@@ -1,2 +1,3 @@
-import "./js/theme";
-import "./js/highlight";
+import "./css/main.scss";
+import "./js/theme.ts";
+import "./js/highlight.ts";
