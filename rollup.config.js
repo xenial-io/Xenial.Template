@@ -1,3 +1,5 @@
+import pkg from "./package.json";
+
 import fg from "fast-glob";
 
 import { brotliCompressSync } from "zlib";
@@ -24,11 +26,13 @@ const additionalFiles = [
 export default [
   {
     input: "src/index.ts",
-    output: {
-      file: "dist/index.min.js",
-      format: "iife",
-      plugins: [terser()],
-    },
+    output: [
+      {
+        file: pkg.main,
+        format: "umd",
+        plugins: [terser()],
+      },
+    ],
     external: [],
     plugins: [
       resolve({ extensions }),
@@ -61,6 +65,5 @@ export default [
       }),
       filesize(),
     ],
-    //   sourceMap: "inline",
   },
 ];

@@ -1,8 +1,8 @@
 {
-  "name": "xenial.template",
+  "name": "@xenial-io/xenial.template",
   "version": "0.0.1",
   "description": "Corporate Design Template for Xenial",
-  "main": "index.js",
+  "main": "dist/index.min.js",
   "scripts": {
     "start": "open-cli http://localhost:1234 & parcel serve src/index.html",
     "watch": "parcel watch src/index.html",
@@ -10,7 +10,11 @@
     "serve": "npm run build && dotnet serve -d dist -z -b"
   },
   "author": "Manuel Grundner, Xenial",
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/xenial-io/Xenial.Template.git"
+  },
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.11.0",
     "@babel/preset-typescript": "^7.10.4",
@@ -34,5 +38,8 @@
     "webfonts": "^0.1.1",
     "zlib": "^1.0.5"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "files": [
+    "dist"
+  ]
 }

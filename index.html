@@ -1,0 +1,533 @@
+<html>
+  <head>
+    <title>Xenial.Template</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <input
+      class="xenial__toggletheme-checkbox"
+      id="xenial-toggle-theme"
+      type="checkbox"
+      aria-hidden="true"
+    />
+    <div class="xenial-body">
+      <header class="xenial-header">
+        <input
+          class="xenial-header__togglenavbar-checkbox"
+          id="xenial-toggle-navbar"
+          type="checkbox"
+          aria-hidden="true"
+        />
+        <div class="xenial-header__logo__teaser" aria-hidden="true">
+          <img src="./img/logo.svg" />
+          <span class="xenial-header__logo__teaser__brand-rows">
+            <span class="xenial-header__logo__teaser__brand-first-row">
+              Manuel Grundner
+            </span>
+            <span class="xenial-header__logo__teaser__brand-second-row">
+              code & consult
+            </span>
+          </span>
+        </div>
+        <div class="xenial-header__logo">
+          <img src="./img/logo.svg" />
+          <span class="xenial-header__logo__brand-rows">
+            <span class="xenial-header__logo__brand-first-row">
+              Manuel Grundner
+            </span>
+            <span class="xenial-header__logo__brand-second-row">
+              code & consult
+            </span>
+          </span>
+        </div>
+        <label
+          class="xenial-header__togglenavbar-label"
+          for="xenial-toggle-navbar"
+        >
+          <div>
+            <span class="middle">
+              <span class="before"></span>
+              <span class="after"></span>
+            </span>
+          </div>
+        </label>
+        <nav class="xenial-header__nav">
+          <ul class="xenial-header__navlist">
+            <li>
+              <label for="xenial-toggle-theme">
+                <i class="fas fa-sun"></i>
+                Theme
+              </label>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-info-circle"></i>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-briefcase"></i>
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-book"></i>
+                Series
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-archive"></i>
+                Archive
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-tag"></i>
+                Tags
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <article>
+          <h1>Lorem ipsum dolor</h1>
+          <p>
+            sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+            Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+            adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+            Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ipsa, quibusdam accusamus quas nemo
+            hic delectus voluptatibus libero aspernatur quo consectetur dolore
+            soluta expedita voluptatem, nulla officia quis deserunt magnam
+            totam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Veniam mollitia, quas impedit, amet nihil exercitationem id autem
+            culpa eveniet sit voluptate rerum eaque, vel sunt? Officia
+            temporibus cupiditate quia perspiciatis. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Explicabo delectus qui aperiam
+            consectetur odit sapiente beatae similique vitae. Esse
+            necessitatibus iure recusandae minus quibusdam officia accusantium.
+            Nobis iusto vero fugiat?
+          </p>
+          <h2>Lorem ipsum dolor</h2>
+          <p>
+            <pre><code class="language-csharp">using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Threading.Tasks;
+using Xenial.Delicious.Metadata;
+using Xenial.Delicious.Scopes;
+
+namespace Xenial.Delicious.Reporters
+{
+    public static class NyanCatReporter
+    {
+        private const int colorCount = 6 * 7;
+        private static readonly int nyanCatWidth;
+        private static readonly int width;
+        private static int colorIndex;
+        private static readonly int numberOfLines;
+        private static readonly Color[]? rainbowColors;
+        private static bool tick;
+        private static readonly List<List<string>>? trajectories;
+        private static readonly int trajectoryWidthMax;
+        
+        //TODO: FOO
+        static NyanCatReporter()
+        {
+            if (!HasValidConsole)
+            {
+                return;
+            }
+
+            Pastel.ConsoleExtensions.Enable();
+
+            nyanCatWidth = 11;
+            width = (int)(Console.WindowWidth * 0.75);
+
+            colorIndex = 0;
+            numberOfLines = Enum.GetValues(typeof(TestOutcome)).Length;
+
+            rainbowColors = GenerateColors();
+            tick = false;
+
+            trajectories = new List<List<string>>();
+
+            for (var i = 0; i < numberOfLines; i++)
+            {
+                trajectories.Add(new List<string>());
+            }
+
+            trajectoryWidthMax = width - nyanCatWidth;
+
+            if (trajectoryWidthMax < 0)
+            {
+                trajectoryWidthMax = 0;
+            }
+        }
+
+        public static TastyScope RegisterNyanReporter(this TastyScope scope)
+          => (scope ?? throw new ArgumentNullException(nameof(scope))).RegisterReporter(Report)
+                  .RegisterReporter(ReportSummary);
+
+        public static TastyScope Register()
+            => Tasty.TastyDefaultScope.RegisterNyanReporter();
+
+        private static bool? hasValidConsole;
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Design", "CA1031:Do not catch general exception types", Justification = "We don't care about which exception is thrown")]
+        private static bool HasValidConsole
+        {
+            get
+            {
+                if (!hasValidConsole.HasValue)
+                {
+                    try
+                    {
+                        hasValidConsole = Console.WindowWidth > 0;
+                    }
+                    catch
+                    {
+                        hasValidConsole = false;
+                    }
+                }
+
+                return hasValidConsole.Value;
+            }
+        }
+
+        private static Task ReportSummary(IEnumerable<TestCaseResult> tests)
+        {
+            Console.WriteLine();
+            Console.ForegroundColor = ColorScheme.Default.DefaultColor;
+            Console.WriteLine($"\t{tests.Count()} total ({(int)Math.Round(TimeSpan.FromTicks(tests.Sum(t => t.Duration.Ticks)).TotalSeconds, 0, MidpointRounding.AwayFromZero)} s)");
+
+            Console.ForegroundColor = ColorScheme.Default.SuccessColor;
+            var successCount = tests.Count(t => t.TestOutcome == TestOutcome.Success);
+            if (successCount > 0) { Console.WriteLine($"\t{ColorScheme.Default.SuccessIcon} {successCount} passing"); }
+
+            Console.ForegroundColor = ColorScheme.Default.ErrorColor;
+            var failedCount = tests.Count(t => t.TestOutcome == TestOutcome.Failed);
+            if (failedCount > 0) { Console.WriteLine($"\t{ColorScheme.Default.ErrorIcon} {failedCount} failed"); }
+
+            Console.ForegroundColor = ColorScheme.Default.SuccessColor;
+            if (tests.Count() == successCount) { Console.WriteLine($"\t{ColorScheme.Default.SuccessIcon} All tests passed"); }
+
+            if (failedCount > 0)
+            {
+                Console.ForegroundColor = ColorScheme.Default.ErrorColor;
+                Console.WriteLine($"\t{ColorScheme.Default.ErrorIcon} Failed tests:");
+
+                foreach (var fail in tests.Where(t => t.TestOutcome == TestOutcome.Failed))
+                {
+                    Console.WriteLine($"\t\t{fail.FullName}");
+                    Console.WriteLine($"\t\t\t{fail.AdditionalMessage}");
+                }
+            }
+
+            return Task.CompletedTask;
+        }
+
+        public static Task Report(TestCaseResult test)
+        {
+            if (!HasValidConsole)
+            {
+                return Task.CompletedTask;
+            }
+
+            Draw(test);
+
+            return Task.CompletedTask;
+        }
+
+        private static Color[] GenerateColors()
+        {
+            var colors = new Color[colorCount];
+            var progress = 0f;
+            var step = 1f / colorCount;
+
+            for (var i = 0; i < colorCount; i++)
+            {
+                colors[i] = Rainbow(progress);
+
+                progress += step;
+            }
+
+            return colors;
+        }
+
+        private static Color Rainbow(float progress)
+        {
+            var div = (Math.Abs(progress % 1) * 6);
+            var ascending = (int)((div % 1) * 255);
+            var descending = 255 - ascending;
+
+            return ((int)div) switch
+            {
+                0 => Color.FromArgb(255, 255, ascending, 0),
+                1 => Color.FromArgb(255, descending, 255, 0),
+                2 => Color.FromArgb(255, 0, 255, ascending),
+                3 => Color.FromArgb(255, 0, descending, 255),
+                4 => Color.FromArgb(255, ascending, 0, 255),
+                _ => Color.FromArgb(255, 255, 0, descending),
+            };
+        }
+
+        private static void Draw(TestCaseResult testCase)
+        {
+            Console.CursorTop = 0;
+            Console.CursorLeft = 0;
+
+            tick = !tick;
+
+            for (var i = 0; i < numberOfLines; i++)
+            {
+                if (trajectories![i].Count > trajectoryWidthMax)
+                {
+                    foreach (var traj in trajectories)
+                    {
+                        traj.RemoveAt(0);
+                    }
+                }
+
+                trajectories[i].Add(AppendRainbow());
+
+            }
+
+            var catIndex = 0;
+            var cat = GetNyanCat(testCase).ToList();
+
+            foreach (var traj in trajectories!)
+            {
+                Console.WriteLine(string.Join(string.Empty, traj) + cat[catIndex]);
+                catIndex++;
+            }
+        }
+
+        private static string AppendRainbow() => Rainbowify(tick ? "_" : "-");
+
+        private static string Rainbowify(string input)
+        {
+            var color = rainbowColors![colorIndex % rainbowColors.Length];
+
+            var result = Pastel.ConsoleExtensions.Pastel(input, color);
+
+            colorIndex += 1;
+
+            return result;
+        }
+
+        private static IEnumerable<string> GetNyanCat(TestCaseResult testCase)
+        {
+            yield return " _,------,";
+            yield return " _|   /\\_/\\";
+            yield return " ^|__" + Face(testCase);
+            yield return "   \"\"  \"\" ";
+        }
+        
+        private static string Face(TestCaseResult testCase)
+            => testCase.TestOutcome switch
+            {
+                TestOutcome.NotRun => "( o .o)",
+                TestOutcome.Ignored => "( - .-)",
+                TestOutcome.Failed => "( x .x)",
+                TestOutcome.Success => "( ^ .^)",
+                _ => "( - .-)",
+            };
+    }
+}</code></pre>
+            sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+            Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+            adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+            Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ipsa, quibusdam accusamus quas nemo
+            hic delectus voluptatibus libero aspernatur quo consectetur dolore
+            soluta expedita voluptatem, nulla officia quis deserunt magnam
+            totam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Veniam mollitia, quas impedit, amet nihil exercitationem id autem
+            culpa eveniet sit voluptate rerum eaque, vel sunt? Officia
+            temporibus cupiditate quia perspiciatis. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Explicabo delectus qui aperiam
+            consectetur odit sapiente beatae similique vitae. Esse
+            necessitatibus iure recusandae minus quibusdam officia accusantium.
+            Nobis iusto vero fugiat?
+          </p>
+
+          <h1>Lorem ipsum dolor</h1>
+          <p>
+            sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+            Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+            adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+            Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ipsa, quibusdam accusamus quas nemo
+            hic delectus voluptatibus libero aspernatur quo consectetur dolore
+            soluta expedita voluptatem, nulla officia quis deserunt magnam
+            totam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Veniam mollitia, quas impedit, amet nihil exercitationem id autem
+            culpa eveniet sit voluptate rerum eaque, vel sunt? Officia
+            temporibus cupiditate quia perspiciatis. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Explicabo delectus qui aperiam
+            consectetur odit sapiente beatae similique vitae. Esse
+            necessitatibus iure recusandae minus quibusdam officia accusantium.
+            Nobis iusto vero fugiat?
+          </p>
+
+          <h2>Lorem ipsum dolor</h2>
+          <p>
+            sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+            Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+            adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+            Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Ipsa, quibusdam accusamus quas nemo
+            hic delectus voluptatibus libero aspernatur quo consectetur dolore
+            soluta expedita voluptatem, nulla officia quis deserunt magnam
+            totam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Veniam mollitia, quas impedit, amet nihil exercitationem id autem
+            culpa eveniet sit voluptate rerum eaque, vel sunt? Officia
+            temporibus cupiditate quia perspiciatis. Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Explicabo delectus qui aperiam
+            consectetur odit sapiente beatae similique vitae. Esse
+            necessitatibus iure recusandae minus quibusdam officia accusantium.
+            Nobis iusto vero fugiat?
+          </p>
+          <!-- <h3>Lorem ipsum dolor</h3><p>
+          sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+          Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+          adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+          Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa, quibusdam accusamus quas nemo hic delectus
+          voluptatibus libero aspernatur quo consectetur dolore soluta expedita
+          voluptatem, nulla officia quis deserunt magnam totam. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Veniam mollitia, quas
+          impedit, amet nihil exercitationem id autem culpa eveniet sit
+          voluptate rerum eaque, vel sunt? Officia temporibus cupiditate quia
+          perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing
+          elit. Explicabo delectus qui aperiam consectetur odit sapiente beatae
+          similique vitae. Esse necessitatibus iure recusandae minus quibusdam
+          officia accusantium. Nobis iusto vero fugiat?
+        </p>
+        <h2>Lorem ipsum dolor</h2>
+        <p>
+          sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+          Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+          adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+          Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa, quibusdam accusamus quas nemo hic delectus
+          voluptatibus libero aspernatur quo consectetur dolore soluta expedita
+          voluptatem, nulla officia quis deserunt magnam totam. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Veniam mollitia, quas
+          impedit, amet nihil exercitationem id autem culpa eveniet sit
+          voluptate rerum eaque, vel sunt? Officia temporibus cupiditate quia
+          perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing
+          elit. Explicabo delectus qui aperiam consectetur odit sapiente beatae
+          similique vitae. Esse necessitatibus iure recusandae minus quibusdam
+          officia accusantium. Nobis iusto vero fugiat?
+        </p>
+        <h1>Lorem ipsum dolor</h1>
+        <p>
+          sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+          Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+          adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+          Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa, quibusdam accusamus quas nemo hic delectus
+          voluptatibus libero aspernatur quo consectetur dolore soluta expedita
+          voluptatem, nulla officia quis deserunt magnam totam. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Veniam mollitia, quas
+          impedit, amet nihil exercitationem id autem culpa eveniet sit
+          voluptate rerum eaque, vel sunt? Officia temporibus cupiditate quia
+          perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing
+          elit. Explicabo delectus qui aperiam consectetur odit sapiente beatae
+          similique vitae. Esse necessitatibus iure recusandae minus quibusdam
+          officia accusantium. Nobis iusto vero fugiat?
+        </p>
+        <h2>Lorem ipsum dolor</h2>
+        <p>
+          sit amet, consectetur adipisicing elit. Deleniti facere minus atque.
+          Recusandae assumenda, inventore veniam voluptatum doloribus expedita
+          adipisci corporis nobis molestiae, necessitatibus repudiandae eum!
+          Vero, dicta? Molestias, autem! Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Ipsa, quibusdam accusamus quas nemo hic delectus
+          voluptatibus libero aspernatur quo consectetur dolore soluta expedita
+          voluptatem, nulla officia quis deserunt magnam totam. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Veniam mollitia, quas
+          impedit, amet nihil exercitationem id autem culpa eveniet sit
+          voluptate rerum eaque, vel sunt? Officia temporibus cupiditate quia
+          perspiciatis. Lorem ipsum, dolor sit amet consectetur adipisicing
+          elit. Explicabo delectus qui aperiam consectetur odit sapiente beatae
+          similique vitae. Esse necessitatibus iure recusandae minus quibusdam
+          officia accusantium. Nobis iusto vero fugiat?
+        </p>
+        --></article>
+      </main>
+      <footer class="xenial-footer">
+        <div class="xenial-footer__social">
+          <h3>Learned something new?</h3>
+          <p>Consider supporting me on the following platforms</p>
+          <ul class="xenial-footer__social-links">
+            <li>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-patreon"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-beer"></i></a>
+            </li>
+            <li class="break" aria-hidden="true"></li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-rss-square"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-atom"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="xenial-footer__fineprint">
+          <p class="xenial-footer__fineprint-love">
+            <span>Made with ❤💚❤💚 in Austria</span>
+          </p>
+          <ul class="xenial-footer__fineprint-imprint">
+            <li><a href="#">Licenses</a></li>
+            <li><a href="#">Imprint</a></li>
+          </ul>
+          <p class="xenial-footer__fineprint-terms">
+            Use of this site constitutes acceptance of our
+            <a href="#">Website Terms of Use</a>
+            and
+            <a href="#">Privacy Policy</a>
+            <br />
+            Copyright © 2012-2020 Manuel Grundner. All trademarks or registered
+            trademarks are property of their respective owners
+          </p>
+          <p class="xenial-footer__fineprint-githash" aria-hidden="true">
+            <a
+              href="//github.com/biohazard999/Scissors.Blog/commit/b6111fe7b674e8fd6ea99a37b003efe83ee7a3db"
+              title="Version: '0.1.0+354' Last update: '2020-09-21' Sha: 'b6111fe7b674e8fd6ea99a37b003efe83ee7a3db'"
+            >
+              0.1.0+354 - 2020-09-21
+            </a>
+          </p>
+        </div>
+      </footer>
+    </div>
+    <script defered src="./index.min.js"></script>
+  </body>
+</html>
