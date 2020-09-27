@@ -1,3 +1,10 @@
 import "./css/main.scss";
-import "./js/theme.ts";
-import "./js/highlight.ts";
+import { themeing } from "./js/theme";
+import { highlight } from "./js/highlight";
+
+const xenial = () => {
+  themeing();
+  highlight();
+};
+
+export { xenial };

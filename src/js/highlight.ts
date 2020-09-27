@@ -12,4 +12,8 @@ import "prismjs/components/prism-css.min.js";
 import "prismjs/components/prism-css-extras.min.js";
 import "prismjs/components/prism-scss.min.js";
 
-Prism.highlightAll();
+const highlight = () => {
+  Prism.highlightAll();
+};
+
+export { highlight };

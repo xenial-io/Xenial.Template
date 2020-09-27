@@ -27,11 +27,14 @@ export default [
   {
     input: "src/index.ts",
     output: [
-      {
-        file: pkg.main,
-        format: "umd",
-        plugins: [terser()],
-      },
+      // {
+      //   name: "xenial-template",
+      //   file: pkg.browser,
+      //   format: "umd",
+      //   plugins: [terser(), resolve(), commonjs()],
+      // },
+      // { file: pkg.main, format: "cjs" },
+      { file: pkg.module, format: "es" },
     ],
     external: [],
     plugins: [
