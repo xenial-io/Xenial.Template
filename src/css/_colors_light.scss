@@ -23,6 +23,8 @@
   --xenial-fineprint-fg-color: #{$xenial-lighter-color};
   --xenial-fineprint-highlight-color: #{$xenial-primary-color};
 
+  --xenial-tag-color: #{$xenial-secondary-color};
+
   @include highlight-lite;
 }
 
@@ -32,10 +34,10 @@
 }
 
 $moon: "\f186";
-$sun: "\f185";
+$sun: "\f0eb";
 
 @mixin theme-indicator($icon) {
-  .xenial-theme-indicator:before {
+  .xenial-theme-indicator::before {
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
@@ -45,16 +47,28 @@ $sun: "\f185";
   }
 }
 
+.v-light,
+.v-dark {
+  display: none;
+}
+
 @media (prefers-color-scheme: light) {
   .xenial {
     &__toggletheme-checkbox {
       &:checked ~ * {
         @include dark-theme;
         @include theme-indicator($sun);
+        .v-dark {
+          display: unset;
+        }
       }
+
       &:not(:checked) ~ * {
         @include light-theme;
         @include theme-indicator($moon);
+        .v-light {
+          display: unset;
+        }
       }
     }
   }
@@ -66,10 +80,17 @@ $sun: "\f185";
       &:checked ~ * {
         @include light-theme;
         @include theme-indicator($moon);
+        .v-light {
+          display: unset;
+        }
       }
+
       &:not(:checked) ~ * {
         @include dark-theme;
         @include theme-indicator($sun);
+        .v-dark {
+          display: unset;
+        }
       }
     }
   }

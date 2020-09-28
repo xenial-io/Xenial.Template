@@ -1,0 +1,44 @@
+main {
+  .article-wrapper {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 100vw;
+
+    aside {
+      width: 220px;
+      padding: {
+        left: 128px;
+        right: 128px;
+        bottom: 1rem;
+      }
+      display: none;
+      position: sticky;
+      max-height: 100vh;
+      overflow: hidden;
+      top: 0;
+    }
+
+    @media (min-width: 1025px) {
+      aside {
+        display: block;
+      }
+    }
+
+    article {
+      flex: 1 1 0%;
+      max-width: 100%;
+    }
+
+    @media (min-width: 770px) {
+      article {
+        max-width: 686px;
+      }
+    }
+  }
+}

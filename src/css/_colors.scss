@@ -39,6 +39,8 @@ $xenial-anim-l: 500ms;
   --xenial-fineprint-fg-color: #{$xenial-lighter-color};
   --xenial-fineprint-highlight-color: #{$xenial-secondary-color};
 
+  --xenial-tag-color: #{$xenial-highlight-color};
+
   @include highlight-dark;
 }
 
