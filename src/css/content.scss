@@ -20,6 +20,16 @@ main {
       padding-bottom: 1rem;
     }
 
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
     ol {
       list-style: none;
       counter-reset: listing;
@@ -120,7 +130,6 @@ main {
     }
     @mixin inline-code {
       background-color: var(--highlight-bg);
-      opacity: 0.8;
       border-radius: 2px;
       display: inline-block;
       padding-left: 0.2rem;
@@ -128,9 +137,8 @@ main {
       font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
       direction: ltr;
       text-align: left;
-      white-space: pre;
       word-spacing: normal;
-      word-break: normal;
+      word-break: break-all;
     }
 
     p {

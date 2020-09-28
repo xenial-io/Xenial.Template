@@ -32,6 +32,15 @@ pre code {
   * {
     @include default-transition;
   }
+  header {
+    z-index: 3;
+  }
+  main {
+    z-index: 2;
+  }
+  footer {
+    z-index: 1;
+  }
 }
 
 main {
