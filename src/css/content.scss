@@ -16,8 +16,20 @@ main {
     &:first-child {
       padding-top: 1rem;
     }
+
     &:last-child {
       padding-bottom: 1rem;
+    }
+
+    p {
+      a[href^="http"]::after,
+      a[href^="//"]::after
+      {
+        font-family: "Font Awesome 5 Free";
+        content: " \f35d";
+        font-weight: 900;
+        font-size: 0.8rem;
+      }
     }
 
     img {

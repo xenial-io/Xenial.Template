@@ -3,8 +3,6 @@ main {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
     flex-direction: row-reverse;
     justify-content: center;
     align-items: flex-start;
@@ -14,7 +12,6 @@ main {
       width: 220px;
       padding: {
         left: 128px;
-        right: 128px;
         bottom: 1rem;
       }
       display: none;
@@ -24,7 +21,7 @@ main {
       top: 0;
     }
 
-    @media (min-width: 1025px) {
+    @media (min-width: 1099px) {
       aside {
         display: block;
       }
