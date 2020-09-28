@@ -57,15 +57,15 @@ export default [
           { src: "src/img/*.*", dest: "./dist/img" },
         ],
       }),
-      gzipPlugin({
-        additionalFiles,
-      }),
-      gzipPlugin({
-        additionalFiles,
-        customCompression: (content) =>
-          brotliCompressSync(Buffer.from(content)),
-        fileName: ".br",
-      }),
+      // gzipPlugin({
+      //   additionalFiles,
+      // }),
+      // gzipPlugin({
+      //   additionalFiles,
+      //   customCompression: (content) =>
+      //     brotliCompressSync(Buffer.from(content)),
+      //   fileName: ".br",
+      // }),
       filesize(),
     ],
   },
