@@ -18,7 +18,14 @@ main {
       position: sticky;
       max-height: 100vh;
       overflow: hidden;
+      overflow-y: auto;
       top: 0;
+
+      &::after {
+        content: "";
+        padding-bottom: 3rem;
+        display: inline-block;
+      }
     }
 
     @media (min-width: 1099px) {
