@@ -18,4 +18,4 @@ const highlight = () => {
   Prism.highlightAll();
 };
 
-export { highlight };
+export { highlight, Prism };
