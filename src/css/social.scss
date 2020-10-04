@@ -1,0 +1,48 @@
+@import "./_colors.scss";
+
+.xenial__social {
+  background-color: var(--xenial-teaser-bg-color);
+  color: var(--xenial-teaser-fg-color);
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  h3 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style: none;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    li {
+      display: block;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+      &.break {
+        flex-basis: 100%;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+      }
+    }
+  }
+
+  a,
+  a:link {
+    color: var(--xenial-teaser-fg-color);
+    transition: color ease-in-out 150ms;
+    &:hover {
+      color: var(--xenial-teaser-highlight-color);
+    }
+  }
+}
