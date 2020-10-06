@@ -1,0 +1,27 @@
+@import "./colors";
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--xenial-light-color) var(--xenial-darker-color);
+}
+
+/* Works on Chrome/Edge/Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: var(--xenial-darker-color);
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--xenial-darker-color);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--xenial-light-color);
+  border-radius: 20px;
+  border: 3px solid var(--xenial-darker-color);
+}
