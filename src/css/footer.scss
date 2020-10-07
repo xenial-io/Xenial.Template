@@ -1,8 +1,6 @@
 @import "./_colors.scss";
 
 .xenial-footer {
-  
-
   &__fineprint {
     text-align: center;
     color: var(--xenial-fineprint-fg-color);
@@ -13,32 +11,29 @@
     a,
     a:link {
       color: var(--xenial-fineprint-fg-color);
-      text-decoration: none;
-      font-weight: bold;
-      position: relative;
+      text-decoration: underline;
 
-      &::after {
-        content: "";
-        position: absolute;
-        display: block;
-        height: 1px;
-        background: var(--xenial-fineprint-highlight-color);
-        left: 0;
-        right: 0;
-        bottom: 1px;
-        transform: scale(0, 1);
-        transition: transform ease-in-out 150ms;
-        transform-origin: left;
-        border-radius: 1px;
-      }
-
-      &:hover::after {
-        transform: scale(1, 1);
+      &:hover {
+        text-decoration: none;
       }
     }
 
     &-love {
       font-size: 1.3em;
+      i {
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+        text-shadow: -1px 0 var(--xenial-fineprint-fg-color),
+          0 1px var(--xenial-fineprint-fg-color),
+          1px 0 var(--xenial-fineprint-fg-color),
+          0 -1px var(--xenial-fineprint-fg-color);
+      }
+      .green {
+        color: var(--xenial-styria-green-color);
+      }
+      .red {
+        color: var(--xenial-austria-red-color);
+      }
     }
 
     &-imprint {
