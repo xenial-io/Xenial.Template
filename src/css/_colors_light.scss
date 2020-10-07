@@ -2,6 +2,9 @@
 @import "./highlight.light.scss";
 
 @mixin light-theme {
+  --xenial-styria-green-color: #{$xenial-styria-green-color};
+  --xenial-austria-red-color: #{$xenial-austria-red-color};
+
   --xenial-lighter-color: #{$xenial-darker-color};
   --xenial-light-color: #{$xenial-dark-color};
   --xenial-dark-color: #{$xenial-light-color};

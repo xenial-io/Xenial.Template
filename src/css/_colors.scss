@@ -11,6 +11,9 @@ $xenial-darker-color: #333333;
 $xenial-white-color: #fff;
 $xenial-black-color: #000;
 
+$xenial-styria-green-color: #007e2d;
+$xenial-austria-red-color: #c8102e;
+
 $xenial-anim-s: 100ms;
 $xenial-anim-s2: 150ms;
 $xenial-anim-s3: 200ms;
@@ -18,6 +21,9 @@ $xenial-anim-m: 250ms;
 $xenial-anim-l: 500ms;
 
 @mixin dark-theme {
+  --xenial-styria-green-color: #{$xenial-styria-green-color};
+  --xenial-austria-red-color: #{$xenial-austria-red-color};
+
   --xenial-primary-color: #{$xenial-primary-color};
   --xenial-secondary-color: #{$xenial-secondary-color};
   --xenial-highlight-color: #{$xenial-highlight-color};
