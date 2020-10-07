@@ -39,6 +39,7 @@
   },
   "dependencies": {},
   "files": [
-    "dist"
+    "dist",
+    "src"
   ]
 }
