@@ -48,6 +48,7 @@
       display: flex;
       flex-direction: row-reverse;
       color: var(--xenial-lighter-color);
+      text-decoration: none;
     }
 
     img {
@@ -87,6 +88,7 @@
       display: flex;
       flex-direction: row-reverse;
       color: var(--xenial-lighter-color);
+      text-decoration: none;
     }
 
     img {
@@ -138,13 +140,16 @@
       transition: opacity var(--xenial-anim-s) ease-in-out;
       position: relative;
       white-space: nowrap;
+      cursor: pointer;
 
-      i.fas {
+      i.fas,
+      i.xenial-theme-indicator {
         width: 1.2em;
         transition: color var(--xenial-anim-s3) ease-in-out;
       }
 
-      &:hover i.fas {
+      &:hover i.fas,
+      &:hover i.xenial-theme-indicator {
         color: var(--xenial-secondary-color);
       }
 
@@ -287,6 +292,7 @@
       a:hover {
         flex-direction: row;
         color: var(--xenial-lighter-color);
+        text-decoration: none;
       }
       grid-column: 2 / 3;
 
