@@ -41,6 +41,15 @@
     transition: opacity var(--xenial-anim-m) ease-in-out;
     border: 0;
 
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
+      display: flex;
+      flex-direction: row-reverse;
+      color: var(--xenial-lighter-color);
+    }
+
     img {
       display: block;
       width: calc(var(--height) - var(--offset));
@@ -70,6 +79,15 @@
     margin-right: var(--left-margin);
     background-color: var(--xenial-hamburer-bg-color);
     color: var(--xenial-lighter-color);
+
+    a,
+    a:hover,
+    a:visited,
+    a:focus {
+      display: flex;
+      flex-direction: row-reverse;
+      color: var(--xenial-lighter-color);
+    }
 
     img {
       display: block;
@@ -263,6 +281,13 @@
 
     &__logo {
       flex-direction: row;
+      a,
+      a:link,
+      a:visited,
+      a:hover {
+        flex-direction: row;
+        color: var(--xenial-lighter-color);
+      }
       grid-column: 2 / 3;
 
       &__brand-rows {
