@@ -1,5 +1,3 @@
-import pkg from "./package.json";
-
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import babel from "@rollup/plugin-babel";
@@ -13,7 +11,7 @@ export default [
   {
     input: "src/index.ts",
     output: [
-      { file: pkg.module, format: "es" },
+      { file: 'dist/index.esm.js', format: "es" },
     ],
     external: [],
     plugins: [
