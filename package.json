@@ -18,6 +18,7 @@
     "url": " https://github.com/xenial-io/Xenial.Template.git"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.8",
     "@babel/plugin-transform-typescript": "^7.25.7",
     "@babel/preset-typescript": "^7.25.7",
     "@fortawesome/fontawesome-free": "^6.6.0",
@@ -37,9 +38,7 @@
     "typescript": "^5.6.3",
     "zlib": "^1.0.5"
   },
-  "dependencies": {
-    "@babel/core": "^7.25.8"
-  },
+  "dependencies": {},
   "files": [
     "dist",
     "src"
