@@ -1,6 +1,6 @@
 {
   "name": "@xenial-io/xenial-template",
-  "version": "0.1.",
+  "version": "0.1.0",
   "description": "Corporate Design Template for Xenial",
   "main": "src/index.ts",
   "type": "module",
